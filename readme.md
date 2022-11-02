@@ -1,7 +1,7 @@
 # JJ50 "ABNT"
 
 ![jj50](https://user-images.githubusercontent.com/74465757/197259615-6e01b139-9600-47b6-8d34-4fa16c3fe1ef.jpg)
-Esse projeto é baseado na minha necessidade de usar o teclado tanto para digitação quando para escrita de código, e eu não queria reaprender a digitar todas as acentuações e ç durante o uso fora dos editores de código. No meu uso, quando estou digitando textos utilizo o idioma de entrada PT-BR e escrevendo código utilizo o padrão EN-US. Isso explica o Tap-dance na minha tecla OS, para que eu pudesse modificar o idioma com mais naturalidade(o atalho do sistema operacional (Win e Ubuntu) para a troca do idioma (OS + espaço) também é simples e até mesmo um pouco mais natural de realizar do que o Tap-dance, mas implementei mesmo assim para me familiarizar com a funcionalidade do QMK)
+Esse projeto é baseado na minha necessidade de usar o teclado tanto para digitação quanto para escrita de código, e eu não queria reaprender a digitar todas as acentuações e ç durante o uso fora dos editores de código. No meu uso, quando estou digitando textos utilizo o idioma de entrada PT-BR e escrevendo código utilizo o padrão EN-US. Isso explica o Tap-dance na minha tecla OS, para que eu possa modificar o idioma com mais naturalidade(o atalho do sistema operacional (tanto no win quanto no Ubuntu) para a troca do idioma (OS + espaço) também é simples e até mesmo um pouco mais natural de realizar do que o Tap-dance, mas implementei mesmo assim para me familiarizar com a funcionalidade do QMK).
 
 * Keyboard Maintainer: [QMK Community](https://github.com/qmk)
 * Hardware Supported: Atmega32A
