@@ -28,6 +28,7 @@ enum layers {
     _QWERTY,
     _LOWER,
     _RAISE,
+    _CONFIG,
 };
 
 enum keycodes {
@@ -40,7 +41,7 @@ enum keycodes {
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
     [TD_LSFT_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
-    [TD_ALT_ALTGR] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_LALT),
+    [TD_ALT_ALTGR] = ACTION_TAP_DANCE_DOUBLE(KC_LALT, KC_RALT),
     [TD_WIN_PT_EN] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, LGUI(KC_SPC)),
     [TD_SMC_QUEST] = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, RALT(KC_W)),
 };
@@ -53,40 +54,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |  [   |
      * |------+------+------+------+------+-------------+------+------+------+------+------|
-     * |      |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  '   |
+     * |   `  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  '   |
      * |------+------+------+------+------+------|------+------+------+------+------+------|
      * |LS/Cap|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |En/Lsh|
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl | Win  |Gr/Alt|      | Lower|    Space    | Raise|   /  | Left | Down |Right |
+     * | Ctrl |  F12 | Win  |Gr/Alt| Lower|    Space    | Raise|   /  | Left | Down |Right |
      * `-----------------------------------------------------------------------------------'
      */
     [_QWERTY] = LAYOUT(
     KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
 	KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC,
-	XXXXXXX, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
+	KC_GRV, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
 	TD(TD_LSFT_CAPS), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_UP, KC_SFTENT,
-	KC_LCTL, TD(TD_WIN_PT_EN), TD(TD_ALT_ALTGR), XXXXXXX, MO(_LOWER), KC_SPC, KC_SPC, MO(_RAISE), TD(TD_SMC_QUEST), KC_LEFT, KC_DOWN, KC_RGHT
+	KC_LCTL, KC_F12, TD(TD_WIN_PT_EN), TD(TD_ALT_ALTGR), MO(_LOWER), KC_SPC, KC_SPC, MO(_RAISE), TD(TD_SMC_QUEST), KC_LEFT, KC_DOWN, KC_RGHT
     ),
 	
     /* LOWER
      * ,-----------------------------------------------------------------------------------.
      * |      |  F11 |  F12 |  F13 |  F14 |  F15 |  F16 |  F17 |      |      |   _  |  -   |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |      |      |   [  |   ]  |  +   |
+     * |      |  F18 |  F19 |  F20 |  F21 |  F22 |  F23 |  F24 |      |   [  |   ]  |  +   |
      * |------+------+------+------+------+-------------+------+------+------+------+------|
      * |      |      |      |      |      |      |      |      |      |   {  |   }  |  =   |
      * |------+------+------+------+------+------|------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |      |      |      | PgUp |      |
+     * |      |      |      |      |      |      |      |      |   |  |      | PgUp |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |      |      |      |      |             |      |   \  | Home | PgDn | End  |
+     * |      |      |      |      |      |             |CONFIG|   \  | Home | PgDn | End  |
      * `-----------------------------------------------------------------------------------'
      */
     [_LOWER] = LAYOUT(
 	XXXXXXX, KC_F11, KC_F12, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, XXXXXXX, XXXXXXX, LSFT(KC_MINS), KC_PMNS,
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LSFT(KC_NUHS), KC_LBRC, KC_RBRC, KC_PPLS, 
+	XXXXXXX, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, XXXXXXX, KC_LBRC, KC_RBRC, KC_PPLS, 
 	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_PEQL, 
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, XXXXXXX, 
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, KC_HOME, KC_PGDN, KC_END
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LSFT(KC_NUHS), XXXXXXX, KC_PGUP, XXXXXXX, 
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MO(_CONFIG), KC_BSLS, KC_HOME, KC_PGDN, KC_END
     ),
 
     /* RAISE
@@ -99,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|------+------+------+------+------+------|
      * | Lmod | Hue+ |      |      |      |      |      |      |      |      | VolU |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Stat | Sat+ |      |      |      |  Play/Pause |      |      | Prev | VolD | Next |
+     * | Stat | Sat+ |      |      |CONFIG|  Play/Pause |      |      | Prev | VolD | Next |
      * `-----------------------------------------------------------------------------------'
      */
     [_RAISE] = LAYOUT(
@@ -107,7 +108,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,
 	RGB_TOG, RGB_VAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 	RGB_MOD, RGB_HUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_VOLU, XXXXXXX,
-	RGB_M_P , RGB_SAI, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPLY, KC_MPLY, XXXXXXX, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT
+	RGB_M_P , RGB_SAI, RGB_M_R, XXXXXXX, MO(_CONFIG), KC_MPLY, KC_MPLY, XXXXXXX, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT
+    ),
+
+    /* CONFIG
+     * ,-----------------------------------------------------------------------------------.
+     * |BOOTLD|      |      |      |      |      |      |      |      |      |      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |      |      |      |      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |      |      |      |      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |      |      |      |      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |             |      |      |      |      |      |
+     * `-----------------------------------------------------------------------------------'
+     */
+    [_CONFIG] = LAYOUT(
+    QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     )
 
 };
