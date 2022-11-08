@@ -3,6 +3,12 @@
 ![jj50](https://user-images.githubusercontent.com/74465757/197259615-6e01b139-9600-47b6-8d34-4fa16c3fe1ef.jpg)
 Esse projeto é baseado na minha necessidade de usar o teclado tanto para digitação quanto para escrita de código, e eu não queria reaprender a digitar todas as acentuações e ç durante o uso fora dos editores de código. No meu uso, quando estou digitando textos utilizo o idioma de entrada PT-BR e escrevendo código utilizo o padrão EN-US. Isso explica o Tap-dance na minha tecla OS, para que eu possa modificar o idioma com mais naturalidade(o atalho do sistema operacional (tanto no win quanto no Ubuntu) para a troca do idioma (OS + espaço) também é simples e até mesmo um pouco mais natural de realizar do que o Tap-dance, mas implementei mesmo assim para me familiarizar com a funcionalidade do QMK).
 
+Breve explicação do meu layout, por camada:
+![Captura de tela de 2022-11-01 22-40-05](https://user-images.githubusercontent.com/74465757/199374616-3666dca6-7115-495c-8b21-ebe314ce4d2d.png)
+Camada principal e padrão. as teclas são dispostas semelhante ao ABNT, permitindo pontuação e ç normal ao usar o idioma de entrada PT-BR no sistema.
+     
+
+
 * Keyboard Maintainer: [QMK Community](https://github.com/qmk)
 * Hardware Supported: Atmega32A
 * Hardware Availability: [AliExpress](https://www.aliexpress.com/item/jj50-v1-0-Custom-Mechanical-Keyboard-50-PCB-programmed-50-preonic-layouts-bface-firmware-with-rgb/32848915277.html); [KPrepublic](https://kprepublic.com/collections/jj50-50/products/jj50-50-custom-keyboard-pcb-similar-with-preonic)
