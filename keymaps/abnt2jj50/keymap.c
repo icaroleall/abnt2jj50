@@ -75,11 +75,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	
     /* LOWER
      * ,-----------------------------------------------------------------------------------.
-     * |      |  F11 |  F12 |  F13 |  F14 |  F15 |  F16 |  F17 |      |      |   _  |  -   |
+     * |      |  F11 |  F12 |  F13 |  F14 |  F15 |  F16 |  F17 |   -  |   _  |      |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |  F18 |  F19 |  F20 |  F21 |  F22 |  F23 |  F24 |      |   [  |   ]  |  +   |
+     * |      |  F18 |  F19 |  F20 |  F21 |  F22 |  F23 |  F24 |   +  |   [  |   ]  |      |
      * |------+------+------+------+------+-------------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |      |      |   {  |   }  |  =   |
+     * |      |      |      |      |      |      |      |      |   =  |   {  |   }  |      |
      * |------+------+------+------+------+------|------+------+------+------+------+------|
      * |      |      |      |      |      |      |      |      |   |  |      | PgUp |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -87,11 +87,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-----------------------------------------------------------------------------------'
      */
     [_LOWER] = LAYOUT(
-	XXXXXXX, KC_F11, KC_F12, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, XXXXXXX, XXXXXXX, LSFT(KC_MINS), KC_PMNS,
-	XXXXXXX, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, XXXXXXX, KC_LBRC, KC_RBRC, KC_PPLS, 
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_PEQL, 
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LSFT(KC_NUHS), XXXXXXX, KC_PGUP, XXXXXXX, 
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MO(_CONFIG), KC_BSLS, KC_HOME, KC_PGDN, KC_END
+	XXXXXXX,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,     KC_PMNS,       LSFT(KC_MINS), XXXXXXX, XXXXXXX,
+	XXXXXXX,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,     KC_PPLS,       KC_LBRC,       KC_RBRC, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_PEQL,       KC_LCBR,       KC_RCBR, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     LSFT(KC_NUHS), XXXXXXX,       KC_PGUP, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MO(_CONFIG), KC_BSLS,       KC_HOME,       KC_PGDN, KC_END
     ),
 
     /* RAISE
