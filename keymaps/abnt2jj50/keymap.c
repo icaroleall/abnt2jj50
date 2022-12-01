@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|------+------+------+------+------+------|
      * |LS/Cap|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  |En/Lsh|
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl | Win  |Gr/Alt|  F12 | Lower|    Space    | Raise|  / ? | Left | Down |Right |
+     * |Ct/F12|      | Win  |Gr/Alt| Lower|    Space    | Raise|  / ? | Left | Down |Right |
      * `-----------------------------------------------------------------------------------'
      */
     [_QWERTY] = LAYOUT(
@@ -70,49 +70,49 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, TD(TD_AGUDO_CRASE),
 	KC_GRV, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, TD(TD_TIL_CIRCUNF),
 	TD(TD_LSFT_CAPS), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_UP, KC_SFTENT,
-	KC_LCTL, TD(TD_WIN_PT_EN), TD(TD_ALT_ALTGR), KC_F12, MO(_LOWER), KC_SPC, KC_SPC, MO(_RAISE), TD(TD_SMC_QUEST), KC_LEFT, KC_DOWN, KC_RGHT
+	LCTL_T(KC_F12), XXXXXXX, TD(TD_WIN_PT_EN), TD(TD_ALT_ALTGR), MO(_LOWER), KC_SPC, KC_SPC, MO(_RAISE), TD(TD_SMC_QUEST), KC_LEFT, KC_DOWN, KC_RGHT
     ),
 	
     /* LOWER
      * ,-----------------------------------------------------------------------------------.
-     * |      |  F11 |  F12 |  F13 |  F14 |  F15 |  F16 |  F17 |   -  |   _  |      |      |
+     * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  Del |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |  F18 |  F19 |  F20 |  F21 |  F22 |  F23 |  F24 |   +  |   [  |   ]  |      |
+     * |      |  F11 |  F12 |  F13 |  F14 |  F15 |  F16 |  F17 |  F18 |  F19 |   [  |   ]  |
      * |------+------+------+------+------+-------------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |      |   =  |   {  |   }  |      |
+     * | Ltgg | Bri+ |      |      |      |      |      |   -  |   +  |   =  |   {  |   }  |
      * |------+------+------+------+------+------|------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |      |   |  |      | PgUp |      |
+     * | Lmod | Hue+ |      |      |      |      |      |      |   |  |      | PgUp | Print|
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |      |      |      |      |             |CONFIG|   \  | Home | PgDn | End  |
+     * | Stat | Sat+ |      |      |      |  Play/Pause |CONFIG|   \  | Home | PgDn | End  |
      * `-----------------------------------------------------------------------------------'
      */
     [_LOWER] = LAYOUT(
-	XXXXXXX,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,     KC_PMNS,       LSFT(KC_MINS), XXXXXXX, XXXXXXX,
-	XXXXXXX,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,     KC_PPLS,       KC_LBRC,       KC_RBRC, XXXXXXX,
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_PEQL,       KC_LCBR,       KC_RCBR, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     LSFT(KC_NUHS), XXXXXXX,       KC_PGUP, XXXXXXX,
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MO(_CONFIG), KC_BSLS,       KC_HOME,       KC_PGDN, KC_END
+	XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,       KC_F8,         KC_F9,   KC_F10,  KC_DEL,
+	XXXXXXX, KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,      KC_F18,        KC_F19, KC_LBRC, KC_RBRC,
+	RGB_TOG, RGB_VAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PMNS,     KC_PPLS,       KC_PEQL, KC_LCBR, KC_RCBR,
+    RGB_MOD, RGB_HUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     LSFT(KC_NUHS), XXXXXXX, KC_PGUP, KC_PSCR,
+	RGB_M_P ,RGB_SAI, RGB_M_R, XXXXXXX, _______, KC_MPLY, KC_MPLY, MO(_CONFIG), KC_BSLS,       KC_HOME, KC_PGDN, KC_END
     ),
 
     /* RAISE
      * ,-----------------------------------------------------------------------------------.
-     * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 | Del  |
+     * |      |      |      |      |      |      |      |      |      |      |      |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      |      |      |      |      | Print|
+     * |      |      |      |      |      |      |      |      |      |      |      |      |
      * |------+------+------+------+------+-------------+------+------+------+------+------|
-     * | Ltgg | Bri+ |      |      |      |      |      |      |      |      |      |      |
+     * |      |      |      |      |      |      |      |      |      |      |      |      |
      * |------+------+------+------+------+------|------+------+------+------+------+------|
-     * | Lmod | Hue+ |      |      |      |      |      |      |      |      | VolU |      |
+     * |      |      |      |      |      |      |      |      |      |      | VolU |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Stat | Sat+ |      |      |CONFIG|  Play/Pause |      |      | Prev | VolD | Next |
+     * |      |      |      |      |CONFIG|  Play/Pause |      |      | Prev | VolD | Next |
      * `-----------------------------------------------------------------------------------'
      */
     [_RAISE] = LAYOUT(
-    XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_DEL,
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,
-	RGB_TOG, RGB_VAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-	RGB_MOD, RGB_HUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_VOLU, XXXXXXX,
-	RGB_M_P , RGB_SAI, RGB_M_R, XXXXXXX, MO(_CONFIG), KC_MPLY, KC_MPLY, XXXXXXX, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_VOLU, XXXXXXX,
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MO(_CONFIG), XXXXXXX, XXXXXXX, _______, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT
     ),
 
     /* CONFIG
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+	XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     )
 
 };
